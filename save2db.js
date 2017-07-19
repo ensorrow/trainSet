@@ -11,7 +11,7 @@ lineReader.eachLine('./xinhuanet_tag', function(line, last) {
   count++;
   if(count>20000) return false;
   try {
-    if(new RegExp(/,\s\w\s,/).test(line)) {
+    if(new RegExp(/,\s\w+\s,/).test(line)) {
       item.tag = line;
     }else{
       item.content = line;

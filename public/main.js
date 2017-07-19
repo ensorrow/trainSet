@@ -1,5 +1,5 @@
 function tag2arr(str) {
-  var tagArr = str.split(/,\s\w\s,/);
+  var tagArr = str.split(/,\s\w+\s,/);
   tagArr.pop()
   return tagArr;
 }
@@ -52,9 +52,16 @@ function deleSend(event) {
       content: event.target.innerHTML === '都不对' ? '' : event.target.innerHTML
     }
     var siblings = event.target.parentElement.querySelectorAll('button[data-id]');
+    var lock = 0;
     for(var i=0;i<siblings.length;i++) {
       if(!data.content) siblings[i].disabled = true;
-      else if(i<siblings.length-1) siblings[i].className = '';
+      else if(i<siblings.length-1) {
+        if(!lock&&siblings[i]!=event.target) {
+          siblings[i].disabled = true;
+          lock = 1;
+        }
+        siblings[i].className = '';
+      }
     }
     ajaxSend({
       url: '/pages',
