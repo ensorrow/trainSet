@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "co-body": "^5.1.1",
+    "co-views": "^2.1.0",
+    "koa": "^2.3.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^4.0.1",
+    "line-reader": "^0.4.0",
+    "monk": "^6.0.1"
+  },
+  "scripts": {
+    "save": "node save2db.js",
+    "file": "node write2file.js",
+    "server": "nodemon server.js",
+    "mongo": "mongod --dbpath=data"
+  }
+}

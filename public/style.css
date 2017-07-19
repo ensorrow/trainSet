@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Times New Roman", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+body{
+  background: #fff;
+}
+header{
+  padding: 40px 0;
+  background: #26c3b0;
+}
+header h1{
+  width: 1000px;
+  margin: 0 auto;
+  font-weight: normal;
+  font-size: 24px;
+}
+main{
+  width: 1000px;
+  margin: 20px auto;
+}
+ul{
+  column-count: 2;
+  column-gap: 20px;
+}
+li{
+  break-inside: avoid;
+  background: #f7f7f9;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+li.changed{
+  border-top: 2px solid #26c3b0;
+}
+li p{
+  height: 200px;
+  overflow: auto;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  color: #333;
+}
+li div{
+  border-top: 1px solid #ccc;
+}
+li div::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+button{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+button.active{
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+button.wrong{
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  float: right;
+}
+button:disabled{
+  cursor: not-allowed;
+  color: #999;
+}
+.pagi{
+  text-align: right;
+}
+.pagi input{
+  outline: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 4px;
+  font-size: 14px;
+  background: #f2f2f2;
+  margin-top: 4px;
+  width: 60px;
+}
+.pagi button{
+  margin-top: 0;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+#popup{
+  position: fixed;
+  top: -33px;
+  left: 50%;
+  padding: 6px 10px;
+  font-size: 14px;
+  transform: translateX(-50%);
+  transition: top .5s ease;
+  background: #f2f2f2;
+  border-radius: 6px;
+}

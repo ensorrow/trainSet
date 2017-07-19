@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>测试集人工校正系统</h1>
+  </header>
+  <main>
+    <div id="root"></div>
+    <div class="pagi">
+      <input type="text" value="1" id="page">
+      <button id="go" >跳转</button>
+      <button id="next">下一页</button>
+    </div>
+  </main>
+  <div id="popup">提示信息</div>
+</body>
+<script id="tpl" type="text/html">
+  <ul onclick="deleSend(event)">
+    {{each data item}}
+    <li class="{{item.changed?'changed':''}}">
+      <p>{{item.content}}</p>
+      <div>
+        {{each item.tag}}
+        <button {{item.duplicated?'disabled':''}} data-id="{{item.id}}" class="{{$index==0?'active':''}}">{{$value}}</button>
+        {{/each}}
+        <button {{item.duplicated?'disabled':''}} data-id="{{item.id}}" class="wrong">都不对</button>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</script>
+<script src="./template-web.js"></script>
+<script src="./main.js"></script>
+</html>
