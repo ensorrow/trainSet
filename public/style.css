@@ -119,3 +119,20 @@ button:disabled{
   background: #f2f2f2;
   border-radius: 6px;
 }
+@media screen and (max-width: 1000px){
+  ul{
+    column-count: 1;
+    column-gap: 20px;
+  }
+  main{
+    width: auto;
+    margin: 20px 40px;
+  }
+  header h1{
+    width: auto;
+    margin: 0 40px;
+  }
+  li p{
+    height: 200px;
+  }
+}

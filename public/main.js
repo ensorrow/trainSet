@@ -56,9 +56,9 @@ function deleSend(event) {
     for(var i=0;i<siblings.length;i++) {
       if(!data.content) siblings[i].disabled = true;
       else if(i<siblings.length-1) {
+        if(siblings[i]==event.target) lock = 1;
         if(!lock&&siblings[i]!=event.target) {
           siblings[i].disabled = true;
-          lock = 1;
         }
         siblings[i].className = '';
       }
@@ -81,7 +81,7 @@ window.onload = function() {
   var gobtn = document.getElementById('go');
   var nextbtn = document.getElementById('next');
   gobtn.onclick = function() {
-    page = pageinput.value;
+    page = document.getElementById('page').value;
     getPage(page);
   }
   nextbtn.onclick = function() {

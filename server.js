@@ -8,14 +8,21 @@ var parse = require('co-body');
 app.use(serve(__dirname + '/public'));
 
 app.use(route.get('/pages', async function (ctx) {
-  var params = ctx.query;
-  var page = params.page || 1;
-  var webpages = await modelService.getPages(page);
-  var total = await modelService.getPageCount();
-  ctx.body = {
-    total,
-    data: webpages,
-    perpage: 20
+  try{
+    var params = ctx.query;
+    var page = params.page || 1;
+    var webpages = await modelService.getPages(page);
+    var total = await modelService.getPageCount();
+    ctx.body = {
+      total,
+      data: webpages,
+      perpage: 20
+    }
+  }catch(err) {
+    console.log(err);
+    ctx.body = {
+      msg: '服务器错误'
+    };
   }
 }));
 
